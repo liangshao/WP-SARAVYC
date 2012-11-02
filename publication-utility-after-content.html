@@ -1,0 +1,27 @@
+[wp_tag_cloud]
+<hr/>
+<h2>Filter publications by author, year and type:</h2>
+[wp_dropdown_categories 
+id="list_authors" 
+name="list_authors"
+show_option_all="All authors:" 
+child_of=40647 
+order="ASC" orderby="title"] 
+
+[wp_dropdown_categories 
+id="list_years" 
+name="list_years"
+show_option_all="All years:" 
+child_of=39618 order="ASC" orderby="title"]
+
+[wp_dropdown_categories 
+id="list_types" 
+name="list_types"
+show_option_all="All types:" 
+child_of=172739 
+order="ASC" orderby="title"]
+<hr/>
+<div id="pub-result">
+ [loop query="category_name=publications" pagination="false"]<li class="item"><a href="[the_permalink]">[the_title] </a><div class="hidden-cat">[the_category  separator=',' ]</div></li>
+[/loop]
+</div>
